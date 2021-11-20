@@ -19,10 +19,7 @@ const Cells = (props) => {
     let days = [];
     let day = startDate;
     let formattedDate = "";
-    
-
-
-
+  
     // Inside Modal
 
     const style = {
