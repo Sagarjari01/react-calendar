@@ -24,7 +24,7 @@ const reducer = (state=monthState,action) =>{
                 selectedDate:action.payload
             }
     }
-    console.log(state)
+    // console.log(state)
     return state
 
     // console.log(state)

@@ -10,7 +10,7 @@ import Events from './Events';
 
 const Cells = (props) => {
 
-    const [selectDate, setSelectDate] = useState(new Date());  
+    const [selectDate, setSelectDate] = useState(new Date());
     const monthStart = startOfMonth(props.currentMonth);
     const monthEnd = endOfMonth(monthStart);
     const startDate = startOfWeek(monthStart);
@@ -52,7 +52,7 @@ const Cells = (props) => {
     }
 
     useEffect(()=>{
-      console.log("change")
+      // console.log("change")
     },[selectedMonthEvents])
    
     const handleAdd = ()=> {
@@ -80,7 +80,7 @@ const Cells = (props) => {
           
           setSelectedMonthEvents(monthEvents)
           // console.log(selectedMonthEvents);
-          console.log(selectedMonthEvents)
+          // console.log(selectedMonthEvents)
           break;
       }
     }
@@ -90,10 +90,12 @@ const Cells = (props) => {
         case "CLICK":
           // console.log(focusPoint.current.value);
           handleAdd()
+          handleClose()
         case "KEYPRESS":
           if(e.key==="Enter"){
             // console.log(focusPoint.current.value)
             handleAdd()
+            handleClose()
           }
       }
     }
@@ -165,12 +167,6 @@ const mapStateToProps = (state) => {
       selectedDate:state.selectedDate
     }
   }
-
-//   onDateClick = day => {
-//     this.setState({
-//       selectedDate: day
-//     });
-//   };
 
 const mapDispatchToProps = (dispatch) => {
     return{
